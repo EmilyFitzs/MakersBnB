@@ -1,0 +1,11 @@
+<h3> Properties </h3>
+
+<ul>
+
+  <% @properties.each do |row| %>
+    <li><%= "Name: " + row.name %>
+      <%= "Description: " + row.description %>
+      <%= "Price: " + row.price %>
+    </li>
+  <% end %>
+</ul>

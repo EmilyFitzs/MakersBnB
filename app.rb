@@ -1,14 +1,24 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+
+require_relative './lib/bnb'
+
 require 'sinatra/flash'
 require_relative './database_connection_setup'
 require_relative './models/user'
+
 
 class Bnb < Sinatra::Base
   enable :sessions
   register Sinatra::Flash
   configure :development do
     register Sinatra::Reloader
+  end
+
+
+  get '/properties' do
+    @properties = Bnb.all
+    erb :properties
   end
 
   get '/signup' do
@@ -53,6 +63,16 @@ class Bnb < Sinatra::Base
     session.clear
     redirect('/signin')
   end
+
+  get '/properties/add' do
+    erb :add_property
+  end
+
+  post '/properties/add' do
+    Bnb.create(name: params[:name], description: params[:description], price: params[:price])
+    redirect '/properties'
+  end
+
 
   run! if app_file == $0
 end
