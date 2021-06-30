@@ -8,7 +8,7 @@ require_relative './database_connection_setup'
 require_relative './models/user'
 
 
-class Bnb < Sinatra::Base
+class MakersBnb < Sinatra::Base
   enable :sessions
   register Sinatra::Flash
   configure :development do

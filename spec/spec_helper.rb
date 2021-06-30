@@ -11,7 +11,7 @@ require 'simplecov-console'
 require_relative './setup_test_database'
 require_relative '../models/user'
 
-Capybara.app = Bnb
+Capybara.app = MakersBnb
 
 User.truncate
 
