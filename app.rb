@@ -8,7 +8,7 @@ require_relative './database_connection_setup'
 require_relative './models/user'
 
 
-class Bnb < Sinatra::Base
+class MakersBnb < Sinatra::Base
   enable :sessions
   register Sinatra::Flash
   configure :development do
@@ -53,7 +53,7 @@ class Bnb < Sinatra::Base
     if user
     session[:user_id] = user.id
     redirect('/')
-    else 
+    else
       flash[:notice] = "Username or password is incorrect"
       redirect ('/signin')
     end
