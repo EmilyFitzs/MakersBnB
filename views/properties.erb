@@ -1,8 +1,11 @@
 <h3> Properties </h3>
 
 <ul>
-<p> <%= @properties %></p>
+
   <% @properties.each do |row| %>
-    <li><%= row.to_s %></li>
+    <li><%= "Name: " + row.name %>
+      <%= "Description: " + row.description %>
+      <%= "Price: " + row.price %>
+    </li>
   <% end %>
 </ul>
