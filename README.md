@@ -1,6 +1,32 @@
 # MakersBnB
 
-We are building a a web application that allows users to list spaces they have available, and to hire spaces for the night.
+We have been tasked with building an AirBnB clone made up of a web application and databases that, when coded and integrated successfully, allows users to list spaces they have available, and to hire spaces for the night.
+
+** db setup and user stories below**
+
+## Set up
+
+To setup the database:
+
+* Connect to psql
+* Create the database using the psql command `CREATE DATABASE makersbnb;`
+* Connect to the database using the psql command `\c makersbnb`;
+* Run the query we have saved in the file create_properties_table.sql
+* Populate your table with a row by running `INSERT INTO properties (name, description, price) values ('Villa One', 'Villa with 5 beds and 6 baths', '1080');`
+
+To check you have everything set up ok, please take a look at the properties table inside the makersbnb database. You should see one row in there.  
+
+To setup the test database:
+* Connect to psql
+* Create the database using the psql
+command `CREATE DATABASE makersbnb_test;`;
+* Connect to the database using the psql command `\c makersbnb_test`
+* Run the query we have saved in the file create_properties_table.sql
+
+* `bundle install`
+* `rspec`
+
+You should see 1 passing test.
 
 ## User Stories
 
