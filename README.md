@@ -2,7 +2,7 @@
 
 We have been tasked with building an AirBnB clone made up of a web application and databases that, when coded and integrated successfully, allows users to list spaces they have available, and to hire spaces for the night.
 
-#### db setup and user stories below
+#### * db setup and user stories below *
 
 ## Set up
 
