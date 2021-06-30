@@ -1,12 +1,10 @@
-require '/Users/emilyfitzsimmons/Documents/projects/MakersBnB/lib/database_connection.rb'
+require_relative '../lib/database_connection.rb'
 require_relative '../database_connection_setup'
-
 
 describe DatabaseConnection do
   describe '.setup' do
     it 'sets up a connection to a database through PG' do
       expect(PG).to receive(:connect).with(dbname: 'makersbnb_test')
-      
 
       DatabaseConnection.setup('makersbnb_test')
     end
