@@ -1,15 +1,18 @@
-require 'database_connection'
+require '/Users/emilyfitzsimmons/Documents/projects/MakersBnB/lib/database_connection.rb'
+require_relative '../database_connection_setup'
+
 
 describe DatabaseConnection do
   describe '.setup' do
     it 'sets up a connection to a database through PG' do
-      expect(PG).to receive(:connect).with(dbname: 'bookmark_manager_test')
+      expect(PG).to receive(:connect).with(dbname: 'makersbnb_test')
+      
 
-      DatabaseConnection.setup('bookmark_manager_test')
+      DatabaseConnection.setup('makersbnb_test')
     end
 
     it 'this connection is persistent' do
-      connection = DatabaseConnection.setup('bookmark_manager_test')
+      connection = DatabaseConnection.setup('makersbnb_test')
 
       expect(DatabaseConnection.connection).to eq connection
     end
@@ -17,11 +20,11 @@ describe DatabaseConnection do
 
   describe '.query' do
     it 'executes a query via PG' do
-      connection = DatabaseConnection.setup('bookmark_manager_test')
+      connection = DatabaseConnection.setup('makersbnb_test')
 
-      expect(connection).to receive(:exec).with("SELECT * FROM makersbnb;")
+      expect(connection).to receive(:exec).with("SELECT * FROM users;")
 
-      DatabaseConnection.query("SELECT * FROM makersbnb;")
+      DatabaseConnection.query("SELECT * FROM users;")
     end
   end
 end
