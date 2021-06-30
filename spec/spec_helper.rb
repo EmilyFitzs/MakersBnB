@@ -3,7 +3,11 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
-Capybara.app = MakersBnb
+require_relative '../models/user'
+
+Capybara.app = Bnb
+
+User.truncate
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
