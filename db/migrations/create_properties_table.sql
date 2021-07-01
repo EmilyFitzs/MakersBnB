@@ -1,1 +1,2 @@
 CREATE TABLE properties (id SERIAL PRIMARY KEY, name VARCHAR(70), description VARCHAR(180), price VARCHAR(4));
+ALTER TABLE properties ADD CONSTRAINT "properties_user_id_fkey" FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE RESTRICT ON DELETE RESTRICT;
