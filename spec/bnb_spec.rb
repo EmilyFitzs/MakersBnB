@@ -1,13 +1,14 @@
-require 'bnb'
+require_relative '../models/bnb'
+require_relative '../models/user'
 
 describe Bnb do
   describe '.all' do
     it 'returns a list of properties' do
-      connection = PG.connect(dbname: 'makersbnb_test')
-      Bnb.truncate
-      properties = Bnb.create(name: 'house', description: 'h', price: '3000')
-      Bnb.create(name: 'boat', description: 'b', price: '400')
-      Bnb.create(name: 'houseboat', description: 'hb', price: '600')
+      user = User.create(email: 'test9@example.com', password: 'password123')
+
+      properties = Bnb.create(name: 'house', description: 'h', price: '3000', availability_start: "2021-07-01", availability_end: "2021-10-02", user_id: user.id)
+      Bnb.create(name: 'boat', description: 'b', price: '400', availability_start: "2021-07-01", availability_end: "2021-10-02", user_id: user.id)
+      Bnb.create(name: 'houseboat', description: 'hb', price: '600', availability_start: "2021-07-01", availability_end: "2021-10-02", user_id: user.id)
       properties = Bnb.all
       expect(properties.length).to eq 3
       expect(properties.first.name).to eq 'house'
@@ -25,7 +26,7 @@ describe Bnb do
 
   describe '.create' do
     it 'creates a new properties' do
-      properties = Bnb.create(name: 'room60', description: 'the sixtieth room', price: '6000')
+      properties = Bnb.create(name: 'room60', description: 'the sixtieth room', price: '6000', availability_start: "2021-07-01", availability_end: "2021-10-02", user_id: 1)
 
       expect(properties).to be_a Bnb
       expect(properties.name).to eq 'room60'

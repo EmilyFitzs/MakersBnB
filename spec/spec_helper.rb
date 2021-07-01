@@ -4,17 +4,16 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
-
 require 'simplecov'
 require 'simplecov-console'
 
 require_relative './setup_test_database'
 require_relative '../models/user'
 
-Capybara.app = MakersBnb
+Capybara.app = App
 
 User.truncate
-
+Bnb.truncate
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
@@ -94,6 +93,7 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = :random
+
 
   # Seed global randomization in this process using the `--seed` CLI option.
   # Setting this allows you to use `--seed` to deterministically reproduce
