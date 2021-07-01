@@ -35,6 +35,7 @@ end
 
 feature 'sign up' do
   it 'allows user to sign up' do
+    User.truncate
     visit '/signup'
     fill_in(:email, with: 'test7@example.com')
     fill_in(:password, with: 'password123')
@@ -44,11 +45,11 @@ feature 'sign up' do
     end  
 
   it 'checks email is unique on signup' do
-  visit '/signup'
-  fill_in(:email, with: 'test@example.com')
-  fill_in(:password, with: 'password123')
-  fill_in(:password_confirmation, with: 'password123')
-  click_button('Sign Up')
-  expect(page).to have_content 'A user already exists with this email'
+    visit '/signup'
+    fill_in(:email, with: 'test7@example.com')
+    fill_in(:password, with: 'password123')
+    fill_in(:password_confirmation, with: 'password123')
+    click_button('Sign Up')
+    expect(page).to have_content 'A user already exists with this email'
   end
 end

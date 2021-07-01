@@ -18,8 +18,9 @@ end
 feature 'Adding a space' do
   scenario 'Adds a room or property to the properties page' do
     sign_up
-    # sign_in
+    sign_in
     visit('/properties/add')
+
     fill_in('name', with: 'Room')
     fill_in('description', with: 'its a room')
     fill_in('price', with: '132')
