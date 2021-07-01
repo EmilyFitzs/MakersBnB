@@ -11,13 +11,21 @@ class User
     )
   end
 
+  def self.all
+    results = DatabaseConnection.query('SELECT * FROM users;')
+    results.map do |row|
+      User.new(id: row['id'], email: row['email'])
+    end
+  end
+
   def self.truncate
-    DatabaseConnection.query("TRUNCATE TABLE users RESTART IDENTITY")
+    DatabaseConnection.query("TRUNCATE TABLE users RESTART IDENTITY CASCADE")
   end
 
   def self.find(id:)
     return nil unless id
     result = DatabaseConnection.query("SELECT * FROM users WHERE id = #{id}")
+    return unless result.any?
     User.new(
       id: result[0]['id'],
       email: result[0]['email'],

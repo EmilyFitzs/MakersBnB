@@ -21,7 +21,7 @@ feature 'sign in' do
 
     click_button('Sign out')
     visit '/'
-    expect(page).to have_content 'FORBIDDEN! YOU ARE A GINORMOUS TEAPOT :P'
+    expect(page).to have_content 'Please sign in.'
   end
 
   it 'can check user logs in with correct passwords' do
