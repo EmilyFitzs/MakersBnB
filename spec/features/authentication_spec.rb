@@ -18,7 +18,7 @@ feature 'sign in' do
     expect(page).to have_content 'Welcome, test@example.com'
     click_button('Sign out')
     visit '/'
-    expect(page).to have_content 'Please sign in.'
+    expect(page).to have_content 'Please sign in'
   end
 
   it 'can check user logs in with correct passwords' do
@@ -26,7 +26,7 @@ feature 'sign in' do
     fill_in(:email, with: 'test@example.com')
     fill_in(:password, with: 'am_I_a_teapot?')
     click_button('Sign in')
-    expect(page).to have_content 'Username or password is incorrect'
+    expect(page).to have_content "Username or password is incorrect"
   end
 end
 
