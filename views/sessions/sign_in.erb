@@ -1,8 +1,60 @@
-<form action="/sessions" method="post">
-  <input type="email" name="email" />
-  <input type="password" name="password" />
-  <input type="submit" value="Sign in" class="sign_in_button" />
-</form>
-<h2 style="color:red">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Sign in</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
+    
+    <!-- Bootstrap core CSS -->
+<link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#7952b3">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    
+<main class="form-signin">
+  <form action="/sessions" method="post">
+    <img class="mb-4" src="data:image/png;base64,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" alt="" width="300" height="200">
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    <div class="form-floating">
+      <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" name ="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit" value="Submit" >Sign in</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
+  </form>
+  <h6 style="color:red">
   <%= flash[:notice] %>
-</h2>
+</h6>
+</main>
+

@@ -13,7 +13,6 @@
     </style>
 <h1>Property list</h1>
 
-<<<<<<< HEAD
 <% @properties.each do |property| %>
   <table class="center">
     <thead>
@@ -35,20 +34,15 @@
 <div>
   <input type="submit" value="Request Booking" class="request-button"/>
 </div>
-=======
-<ul>
-
-  <% @properties.each do |row| %>
-    <li><%= "Name: " + row.name %>
-      <%= "Description: " + row.description %>
-      <%= "Price: " + row.price %>
-    </li>
-    <input type="submit" value="Make Request" class="make_request_button" />
->>>>>>> 2ba746187382c6d9d17584aaccead8512715bf5a
   <% end %>
 </head>
+<form action="/sessions/destroy" method="post">
+    <input type="submit" value="Sign out" class="sign_out_button" />
+</form>
 </body>
 </html>
+
+
 
 
 

@@ -38,7 +38,7 @@ class UserController < Sinatra::Base
     user = User.authenticate(email: params[:email], password: params[:password])
     if user
       session[:user_id] = user.id
-      redirect('/')
+      redirect('/properties')
     else 
       flash[:notice] = "Username or password is incorrect"
       redirect ('/signin')

@@ -1,12 +1,7 @@
 <% if @user %>
   <h1>Welcome, <%= @user.email %></h1>
-<<<<<<< HEAD
   <form action="/sessions/destroy" method="post">
-    <input type="submit" value="Sign out" class="sign_out_button" />
-=======
-  <form action="/sessions/destroy" method="post" class="sign_out_button">
-    <input type="submit" value="Sign out">
->>>>>>> 2ba746187382c6d9d17584aaccead8512715bf5a
+    # <input type="submit" value="Sign out" class="sign_out_button" />
   </form>
   <% else %>
   <h1>FORBIDDEN! YOU ARE A GINORMOUS TEAPOT :P</h1>
