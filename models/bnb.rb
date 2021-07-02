@@ -8,13 +8,10 @@ class Bnb
     properties.map do |row|
       Bnb.new(name: row['name'], description: row['description'], price: row['price'])
     end
-    # { |row|  
-    #   {'name: '=>row['name'], 'description: '=>row['description'], 'price: '=>row['price']}
-    # }
   end
 
   def self.create(name:, description:, price:, availability_start:, availability_end:, user_id:)
-    rs = DatabaseConnection.query("INSERT INTO properties (name, description, price, availability_start, availability_end, user_id) VALUES('#{name}', '#{description}', '#{price}', '#{availability_start}', '#{availability_end}', #{user_id}) RETURNING name, description, price;")
+    rs = DatabaseConnection.query("INSERT INTO properties(name, description, price, availability_start, availability_end, user_id) VALUES('#{name}', '#{description}', '#{price}', '#{availability_start}', '#{availability_end}', #{user_id}) RETURNING name, description, price;")
     Bnb.new(name: rs[0]['name'], description: rs[0]['description'], price: rs[0]['price'])
   end
 
