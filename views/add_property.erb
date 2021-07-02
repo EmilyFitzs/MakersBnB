@@ -1,14 +1,39 @@
-<div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Makers Bnb</title>
+    <link rel="stylesheet" href="../new_property.css" />
+  </head>
+  <body>
 
-<form action="/properties/add" method="post" class="add_property_button">
-
-<input type="text" name="name" />
-<input type="text" name="description" />
-<input type="number" name="price" />
-<input type="submit" value="Submit" />
-<input type="date" name="availability_start" />
-<input type="date" name="availability_end" />
-
-</form>
-
-</div> 
+    <div class="container">
+      <h2>List a New Space</h2>
+        <form action="/properties/add" method="post">
+          <label for="propertyname">Title</label>
+          <input type="text" name="name" id="title" placeholder="Title" required />
+          <label for="description">Description</label>
+          <textarea rows = "1" name="description" id="propertydescription" placeholder="Description" required /></textarea>
+          <label for="title">Price per night</label>
+          <input type="number" name="price" id="price" placeholder="Price per night" required />
+          <label for="img">Select image:</label>
+          <input type="file" name="img" id="img" accept="image/*">
+          <br>
+          <br>
+          <label for="availability_start">Available from: </label>
+          <span><input type="date" name="availability_start" />
+          </span>
+          <br />
+          <br />
+          <label for="availability_end">Available until: </label>
+          <input type="date" name="availability_end"
+          />
+          <br />
+          <input type="submit" name="Submit" />
+        </form>
+    </div>
+  </body>
+</html>
+<base href="/" />
