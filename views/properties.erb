@@ -1,13 +1,47 @@
-<h3> Properties </h3>
+<html>
+<head>
+  <link rel="stylesheet" href="../properties.css">
+</head>
+<body>
+  <head>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Noto+Sans">
+    <style>
+      body {
+        font-family: 'Comic Sans MS';
+      }
+    </style>
+<h1>Property list</h1>
 
-<ul>
-
-  <% @properties.each do |row| %>
-    <li><%= "Name: " + row.name %>
-      <%= "Description: " + row.description %>
-      <%= "Price: " + row.price %>
-    </li>
-    <input type="submit" value="Make Request" />
+<% @properties.each do |property| %>
+  <table class="center">
+    <thead>
+      <tr>
+        <td><%= property.name %></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= property.description %></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>£<%= property.price %> per night</td>
+      </tr>
+    </tfoot>
+  </table>
+<div>
+  <input type="submit" value="Request Booking" class="request-button"/>
+</div>
   <% end %>
-</ul>
+</head>
+</body>
+</html>
 
+
+
+
+
+
+  
