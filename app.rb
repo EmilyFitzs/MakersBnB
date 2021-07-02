@@ -10,7 +10,7 @@ require_relative './database_connection_setup'
 require_relative './models/user'
 require_relative 'helpers'
 
-require_relative 'server'
+
 require_relative 'controllers/user_controller'
 require_relative 'controllers/properties_controller'
 

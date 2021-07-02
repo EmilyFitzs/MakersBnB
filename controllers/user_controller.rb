@@ -6,6 +6,11 @@ class UserController < Sinatra::Base
   end
   set :views, Proc.new { File.join(APP_ROOT, "views") }
 
+  get '/properties' do
+    @properties = Bnb.all
+    erb :properties
+  end
+
   get '/signup' do
     erb :"sessions/sign_up"
   end
@@ -48,5 +53,10 @@ class UserController < Sinatra::Base
     check_authenticated(session: session)
     session.clear
     redirect('/signin')
+  end
+
+  get '/properties' do
+    @bnb = Bnb.all
+    erb(:properties)
   end
 end
