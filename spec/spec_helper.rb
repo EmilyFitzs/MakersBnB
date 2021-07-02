@@ -4,8 +4,14 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+<<<<<<< HEAD
 require 'simplecov'
 require 'simplecov-console'
+=======
+
+# require 'simplecov'
+# require 'simplecov-console'
+>>>>>>> bootstrap_testing
 
 require_relative './setup_test_database'
 require_relative '../models/user'
