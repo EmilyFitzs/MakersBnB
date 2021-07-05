@@ -22,7 +22,7 @@ class UserController < Sinatra::Base
    elsif params[:password_confirmation] == params[:password]
      user = User.create(email: params[:email], password: params[:password])
      session[:user_id] = user.id
-     redirect('/')
+     redirect('/properties')
    else
     flash[:notice] = "Passwords don't match"
     redirect('/signup')
